@@ -1,0 +1,9 @@
+;; ANSI Common Lisp: exercise 11.3
+
+;; Precedence lists. Graphs made with graphviz - see the .dot files
+
+Graph: 11.3a.svg
+(a): a, c, e, f, g, h, stdobj, t
+
+Graph: 11.3b.svg
+(b): b, d, e, f, g, h, c, stdobj, t

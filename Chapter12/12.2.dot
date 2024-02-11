@@ -1,0 +1,45 @@
+
+digraph tree {
+    // ANSI Common Lisp: exercise 12.2 
+     node [shape=record,label="<L>|<R>"]
+     
+     
+     // (setf q (make-queue))
+     subgraph a {
+        root [shape=none,label="q"]
+        root -> x
+        x [label="NIL|NIL"]
+     }
+     
+     // (enqueue 'a q)
+     subgraph b {
+        rootb [shape=none,label="q"]
+        rootb -> y
+        y:L:s -> z:n
+        y:R:s -> z:n
+        z:L:s -> data:n
+        z:R:s -> nil:n
+        nil [shape=none,label="NIL"]
+        data [label="a"]
+     }
+     
+     // (enqueue 'b q)
+     subgraph c {
+        rootc [shape=none,label="q"]
+        rootc -> yy
+        yy:L:s -> x1:n
+        yy:R:s -> x2:n
+        x1:L:s -> a
+        a [label="a"]
+        x1:R:s -> x2:n
+        x2:L:s -> b:n
+        x2:R:s -> n:n
+        n [shape=none,label="NIL"]
+        b [label="b"]
+       
+     }
+     
+     // (dequee q)
+     // similar to the first enqueue 
+     
+}
